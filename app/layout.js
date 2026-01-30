@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Iklavya - UI/UX Wireframe Document',
-  description: 'Complete Interface Planning for Iklavya Student Portal',
+  title: 'Iklavya - Product Design and Implementation Planning',
+  description: 'AI-powered career readiness platform for Indian college students',
 };
 
 export default function RootLayout({ children }) {

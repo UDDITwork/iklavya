@@ -64,8 +64,8 @@ const IklavyaWireframes = () => {
                 I
               </div>
               <div>
-                <h1 className="text-lg font-bold text-slate-900">Iklavya - UI/UX Wireframe Document</h1>
-                <p className="text-xs text-slate-500">Complete Interface Planning | Version 2.0 | January 2026</p>
+                <h1 className="text-lg font-bold text-slate-900">Iklavya</h1>
+                <p className="text-xs text-slate-500">Product Design and Implementation Planning | v2.0</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -1660,8 +1660,8 @@ const IklavyaWireframes = () => {
       {/* Footer */}
       <footer className="border-t border-slate-200 py-6 px-6 bg-white mt-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-xs text-slate-500">
-          <div>Iklavya UI/UX Wireframe Document v2.0 | Confidential</div>
-          <div>PATMASTER Design Team | January 2026</div>
+          <div>Iklavya v2.0 | Product Design and Implementation Planning | Confidential</div>
+          <div>PATMASTER Team | January 2026</div>
         </div>
       </footer>
     </div>
