@@ -9,9 +9,16 @@ import AnimationsSpec from './sections/AnimationsSpec';
 import AccessibilitySpec from './sections/AccessibilitySpec';
 import AnalyticsPlan from './sections/AnalyticsPlan';
 import Roadmap from './sections/Roadmap';
+import DashboardScreen from './sections/DashboardScreen';
+import ResumeBuilderScreen from './sections/ResumeBuilderScreen';
+import InterviewLiveScreen from './sections/InterviewLiveScreen';
+import ScoringScreen from './sections/ScoringScreen';
+import SkillGapScreen from './sections/SkillGapScreen';
+import ProgressScreen from './sections/ProgressScreen';
+import ExamScreen from './sections/ExamScreen';
 
 const IklavyaWireframes = () => {
-  const [activeView, setActiveView] = useState('overview');
+  const [activeView, setActiveView] = useState('dashboard-ui');
   const [activeScreen, setActiveScreen] = useState('dashboard');
 
   const screens = [
@@ -70,11 +77,19 @@ const IklavyaWireframes = () => {
               <div className="flex gap-1 overflow-x-auto hide-scrollbar max-w-2xl">
                 {[
                   { id: 'overview', label: 'Overview' },
+                  { id: 'dashboard-ui', label: 'Dashboard' },
+                  { id: 'resume-ui', label: 'Resume Builder' },
+                  { id: 'interview-ui', label: 'Interview' },
+                  { id: 'scoring-ui', label: 'Scoring' },
+                  { id: 'skillgap-ui', label: 'Skill Gap' },
+                  { id: 'progress-ui', label: 'Progress' },
+                  { id: 'exam-ui', label: 'Exam' },
+                  { id: 'overview', label: 'Design System' },
                   { id: 'executive', label: 'Executive' },
                   { id: 'personas', label: 'Personas' },
                   { id: 'competitive', label: 'Competitive' },
-                  { id: 'screens', label: 'Screens' },
-                  { id: 'features', label: 'Features' },
+                  { id: 'screens', label: 'Wireframes' },
+                  { id: 'features', label: 'Feature Specs' },
                   { id: 'animations', label: 'Animations' },
                   { id: 'accessibility', label: 'A11y' },
                   { id: 'analytics', label: 'Analytics' },
@@ -101,6 +116,15 @@ const IklavyaWireframes = () => {
 
       <div className="max-w-7xl mx-auto px-6 py-8">
         
+        {/* New Visual UI Screens */}
+        {activeView === 'dashboard-ui' && <DashboardScreen />}
+        {activeView === 'resume-ui' && <ResumeBuilderScreen />}
+        {activeView === 'interview-ui' && <InterviewLiveScreen />}
+        {activeView === 'scoring-ui' && <ScoringScreen />}
+        {activeView === 'skillgap-ui' && <SkillGapScreen />}
+        {activeView === 'progress-ui' && <ProgressScreen />}
+        {activeView === 'exam-ui' && <ExamScreen />}
+
         {/* Overview Section */}
         {activeView === 'overview' && (
           <div className="space-y-8">
