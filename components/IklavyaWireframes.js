@@ -1,6 +1,14 @@
 ﻿"use client";
 
 import React, { useState } from 'react';
+import ExecutiveSummary from './sections/ExecutiveSummary';
+import UserPersonas from './sections/UserPersonas';
+import CompetitiveAnalysis from './sections/CompetitiveAnalysis';
+import FeatureSpecs from './sections/FeatureSpecs';
+import AnimationsSpec from './sections/AnimationsSpec';
+import AccessibilitySpec from './sections/AccessibilitySpec';
+import AnalyticsPlan from './sections/AnalyticsPlan';
+import Roadmap from './sections/Roadmap';
 
 const IklavyaWireframes = () => {
   const [activeView, setActiveView] = useState('overview');
@@ -56,21 +64,33 @@ const IklavyaWireframes = () => {
             <div className="flex items-center gap-3">
               <div className="text-right text-xs">
                 <div className="text-slate-500">Prepared by</div>
-                <div className="font-medium text-slate-700">PATMASTER Design Team</div>
+                <div className="font-medium text-slate-700">UDDIT</div>
               </div>
               <div className="w-px h-8 bg-slate-200" />
-              <div className="flex gap-1">
-                {['overview', 'screens', 'flows'].map(view => (
+              <div className="flex gap-1 overflow-x-auto hide-scrollbar max-w-2xl">
+                {[
+                  { id: 'overview', label: 'Overview' },
+                  { id: 'executive', label: 'Executive' },
+                  { id: 'personas', label: 'Personas' },
+                  { id: 'competitive', label: 'Competitive' },
+                  { id: 'screens', label: 'Screens' },
+                  { id: 'features', label: 'Features' },
+                  { id: 'animations', label: 'Animations' },
+                  { id: 'accessibility', label: 'A11y' },
+                  { id: 'analytics', label: 'Analytics' },
+                  { id: 'roadmap', label: 'Roadmap' },
+                  { id: 'flows', label: 'Flows' },
+                ].map(view => (
                   <button
-                    key={view}
-                    onClick={() => setActiveView(view)}
-                    className={`px-3 py-1.5 text-xs font-medium rounded-lg capitalize ${
-                      activeView === view 
-                        ? 'bg-indigo-100 text-indigo-700' 
-                        : 'text-slate-500 hover:bg-slate-100'
+                    key={view.id}
+                    onClick={() => setActiveView(view.id)}
+                    className={`px-3 py-1.5 text-xs font-medium rounded-lg whitespace-nowrap transition-all duration-200 ${
+                      activeView === view.id
+                        ? 'bg-indigo-600 text-white shadow-md'
+                        : 'text-slate-500 hover:text-slate-700 hover:bg-slate-100'
                     }`}
                   >
-                    {view}
+                    {view.label}
                   </button>
                 ))}
               </div>
@@ -308,6 +328,30 @@ const IklavyaWireframes = () => {
             </section>
           </div>
         )}
+
+        {/* Executive Summary */}
+        {activeView === 'executive' && <ExecutiveSummary />}
+
+        {/* User Personas */}
+        {activeView === 'personas' && <UserPersonas />}
+
+        {/* Competitive Analysis */}
+        {activeView === 'competitive' && <CompetitiveAnalysis />}
+
+        {/* Feature Specs */}
+        {activeView === 'features' && <FeatureSpecs />}
+
+        {/* Animations */}
+        {activeView === 'animations' && <AnimationsSpec />}
+
+        {/* Accessibility */}
+        {activeView === 'accessibility' && <AccessibilitySpec />}
+
+        {/* Analytics */}
+        {activeView === 'analytics' && <AnalyticsPlan />}
+
+        {/* Roadmap */}
+        {activeView === 'roadmap' && <Roadmap />}
 
         {/* Screens Section */}
         {activeView === 'screens' && (
